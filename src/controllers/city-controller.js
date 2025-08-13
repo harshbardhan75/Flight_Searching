@@ -82,7 +82,7 @@ const update = async(req,res)=>{
 
 const getAll = async(req,res)=>{
     try {
-         const city = await CityService.getCityAll();
+         const city = await CityService.getCityAll(req.query);
         return res.status(200).json({
             data: city,
             success:true,
@@ -94,7 +94,7 @@ const getAll = async(req,res)=>{
         return res.status(500).json({
              data: {},
             success:false,
-            message:"not able to update  city"
+            message:"not able to fetch  city"
         })
     }
 }
