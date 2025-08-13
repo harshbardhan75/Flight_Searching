@@ -63,7 +63,7 @@ const update = async(req,res)=>{
            return res.status(201).json({
             data: response,
             success:true,
-            message:"succesfuly deleted a city"
+            message:"succesfuly updated a city"
         })
         
         
