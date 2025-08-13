@@ -10,7 +10,7 @@ class cityService {
             return city;
 
         } catch (error) {
-            console.log("spmething went wrong at service layer");
+            console.log("something went wrong at service layer");
             throw { error };
         }
     }
@@ -36,6 +36,17 @@ class cityService {
     async getCity(cityId) {
         try {
             const city = await this.CityRepository.getCity(cityId);
+            return city;
+        } catch (error) {
+            console.log("spmething went wrong at service layer");
+            throw { error };
+
+        }
+    }
+
+    async getCityAll() {
+        try {
+            const city = await this.CityRepository.getCityAll();
             return city;
         } catch (error) {
             console.log("spmething went wrong at service layer");

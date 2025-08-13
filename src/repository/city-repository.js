@@ -3,10 +3,10 @@ const { City } = require('../models/index');
 
 class CityRepository {
 
-    async createCity({ name }) {
+    async createCity(data) {
         try {
             const city = await City.create({
-                name
+                name: data.name
             });
             return city;
         }
@@ -53,6 +53,17 @@ class CityRepository {
     async getCity(cityId) {
         try {
             const city = await City.findByPk(cityId);
+            return city;
+        } catch (error) {
+            console.log("something went wrong in repo layer");
+            throw { error };
+
+        }
+    }
+
+    async getCityAll() {
+        try {
+            const city = await City.findAll();
             return city;
         } catch (error) {
             console.log("something went wrong in repo layer");
