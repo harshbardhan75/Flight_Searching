@@ -34,7 +34,7 @@ app.listen(PORT,async()=>{
 // });
 // const airports = await city.getAirports();
 // await city.add
-console.log(city,airports);
+// console.log(city,airports);
 
 })
 
